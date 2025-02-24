@@ -4,6 +4,8 @@ import { FaSlidersH, FaFilter } from 'react-icons/fa';
 import { Button } from '../common/Button';
 import { TourFilters } from './TourFilters';
 import { RentFilters } from './RentFilters';
+import { TransferFilters } from './TransferFilters';
+import { TicketFilters } from './TicketFilters';
 import { Filter } from './Filter';
 import { FilterModalProps, Filters } from '@/types/filters';
 import { MdTour, MdHome, MdTransferWithinAStation, MdConfirmationNumber } from 'react-icons/md';
@@ -71,6 +73,10 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onFilter, ca
                 return <TourFilters filters={filters} onFilterChange={handleFilterChange} onToggleFilter={handleToggleFilter} />;
             case 'Rent':
                 return <RentFilters filters={filters} onFilterChange={handleFilterChange} onToggleFilter={handleToggleFilter} />;
+            case 'Transfer':
+                return <TransferFilters filters={filters} onFilterChange={handleFilterChange} />;
+            case 'Tickets':
+                return <TicketFilters filters={filters} onFilterChange={handleFilterChange} />;
             default:
                 return (
                     <motion.div
